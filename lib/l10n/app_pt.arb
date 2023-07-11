@@ -1,0 +1,25 @@
+{
+  "testLabel": "Test",
+  "@testLabel": {},
+
+  "flutterDemoTitle": "Flutter Demo",
+  "@flutterDemoTitle": {},
+
+  "flutterDemoHomePageTitle": "Flutter Demo Page Principal",
+  "@flutterDemoHomePageTitle": {},
+
+  "incrementClicked": "clique incrementou!",
+  "@incrementClicked": {},
+
+  "navigationItemHomeTitle": "Home",
+  "@navigationItemHomeTitle": {},
+
+  "navigationItemHelpTitle": "Ajuda",
+  "@navigationItemHelpTitle": {},
+
+  "incrementClickTitleFeedBack": "Tu pressionastes o botão esta quantidade de tempo:",
+  "@incrementClickTitleFeedBack": {},
+
+  "incrementFabTooltip": "Incrementar",
+  "@incrementFabTooltip": {}
+}
