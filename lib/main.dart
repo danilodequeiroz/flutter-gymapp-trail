@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en'), // English
-        Locale('pt'), // Spanish
+        Locale('en'),
+        Locale('pt'),
       ],
       title: 'Flutter Demo',
       theme: ThemeData(
