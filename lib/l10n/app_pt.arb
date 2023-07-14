@@ -21,5 +21,8 @@
   "@incrementClickTitleFeedBack": {},
 
   "incrementFabTooltip": "Incrementar",
-  "@incrementFabTooltip": {}
+  "@incrementFabTooltip": {},
+
+  "highPronadePulldownTrainingA": "Puxada Alta Pronada - Treino A",
+  "@highPronadePulldownTrainingA": {}
 }
