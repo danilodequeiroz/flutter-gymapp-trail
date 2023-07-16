@@ -24,5 +24,17 @@
   "@incrementFabTooltip": {},
 
   "highPronadePulldownTrainingA": "High Pronade Pulldown - Training A",
-  "@highPronadePulldownTrainingA": {}
+  "@highPronadePulldownTrainingA": {},
+
+  "highPronadePulldown": "High Pronade Pulldown",
+  "@highPronadePulldown": {},
+
+  "trainingA": "Training A",
+  "@rainingA": {},
+
+  "sendPictureKeyLabel": "Send photo...",
+  "@sendPictureKeyLabel": {},
+
+  "howToKeyLabel": "How to proceed?",
+  "@howToKeyLabel": {}
 }

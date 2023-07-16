@@ -24,5 +24,17 @@
   "@incrementFabTooltip": {},
 
   "highPronadePulldownTrainingA": "Puxada Alta Pronada - Treino A",
-  "@highPronadePulldownTrainingA": {}
+  "@highPronadePulldownTrainingA": {},
+
+  "highPronadePulldown": "Puxada Alta Pronada",
+  "@highPronadePulldown": {},
+
+  "trainingA": "Treino A",
+  "@rainingA": {},
+
+  "sendPictureKeyLabel": "Enviar foto...",
+  "@sendPictureKeyLabel": {},
+
+  "howToKeyLabel": "Como fazer?",
+  "@howToKeyLabel": {}
 }
