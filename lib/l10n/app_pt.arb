@@ -32,9 +32,15 @@
   "trainingA": "Treino A",
   "@rainingA": {},
 
-  "sendPictureKeyLabel": "Enviar foto...",
-  "@sendPictureKeyLabel": {},
+  "putPictureKeyLabel": "Enviar foto...",
+  "@putPictureKeyLabel": {},
 
-  "howToKeyLabel": "Como fazer?",
-  "@howToKeyLabel": {}
+  "deletePictureKeyLabel": "Remover foto...",
+  "@deletePictureKeyLabel": {},
+
+  "howToDoKeyLabel": "Como fazer?",
+  "@howToDoKeyLabel": {},
+
+  "howAmIFeelingKeyLabel": "Como estou me sentindo?",
+  "@howAmIFeelingKeyLabel": {}
 }
