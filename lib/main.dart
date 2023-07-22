@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gymapp/models/model_exercise.dart';
+import 'package:flutter_gymapp/ui/ui_screen_auth.dart';
 import 'package:flutter_gymapp/ui/ui_screen_gym_exercise.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:logging_to_logcat/logging_to_logcat.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor:  Colors.pink),
       navigatorKey: navigatorKey,
       localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         Locale('en'),
         Locale('pt'),
       ],
-      home: ScreenGymExercise(),
+      home: ScreenAuth(),
     );
   }
 }

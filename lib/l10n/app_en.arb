@@ -1,4 +1,7 @@
 {
+  "appTitle": "GymApp",
+  "@appTitle": {},
+
   "testLabel": "Test",
   "@testLabel": {},
 
