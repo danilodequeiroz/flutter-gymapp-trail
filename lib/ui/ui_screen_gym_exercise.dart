@@ -1,29 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_gymapp/_common/colors.dart';
-import 'package:flutter_gymapp/models/model_exercise.dart';
+import 'package:flutter_gymapp/localization/localization.dart';
+import 'package:flutter_gymapp/models/mock/factory.dart';
 import 'package:flutter_gymapp/models/model_feeling.dart';
 
 class ScreenGymExercise extends StatelessWidget {
-  ScreenGymExercise({super.key});
-
-  final Exercise exercise = Exercise(
-      id: "EX001",
-      name: "Puxada Alta Pronada",
-      training: "Treino A",
-      howTo: "Segura a barra e puxa");
-
-  final List<Feeling> feelings = [
-    Feeling(id: "FE001", feeling: "Nenhuma ativação hoje", date: "2023-07-12"),
-    Feeling(id: "FE002", feeling: "Pouca ativação hoje", date: "2023-07-13"),
-    Feeling(id: "FE003", feeling: "Pouca ativação hoje", date: "2023-07-14"),
-    Feeling(id: "FE004", feeling: "Alguma ativação hoje", date: "2023-07-15"),
-    Feeling(id: "FE005", feeling: "Alguma ativação hoje", date: "2023-07-16"),
-    Feeling(
-        id: "FE006",
-        feeling: "Não consigo mexer o braço na região",
-        date: "2023-07-17"),
-  ];
+  const ScreenGymExercise({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +15,11 @@ class ScreenGymExercise extends StatelessWidget {
           title: Column(
             children: [
               Text(
-                exercise.name,
+                MockFactory.getExercise(context).name,
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               ),
-              Text(exercise.training, style: const TextStyle(fontSize: 15))
+              Text(MockFactory.getExercise(context).training, style: const TextStyle(fontSize: 15))
             ],
           ),
           centerTitle: true,
@@ -68,25 +50,25 @@ class ScreenGymExercise extends StatelessWidget {
                     children: [
                       ElevatedButton(
                           onPressed: () {},
-                          child: Text(AppLocalizations.of(context).putPictureKeyLabel)),
+                          child: Text(appLocalization(context).putPictureKeyLabel)),
                       ElevatedButton(
                           onPressed: () {},
-                          child: Text(AppLocalizations.of(context).deletePictureKeyLabel))
+                          child: Text(appLocalization(context).deletePictureKeyLabel))
                     ],
                   )),
               const SizedBox(height: 8),
-              Text(AppLocalizations.of(context).howToDoKeyLabel,
+              Text(appLocalization(context).howToDoKeyLabel,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   )),
               const SizedBox(height: 8),
-              Text(exercise.howTo),
+              Text(MockFactory.getExercise(context).howTo),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Divider(color: Colors.black45, thickness: 0.75),
               ),
-              Text(AppLocalizations.of(context).howAmIFeelingKeyLabel,
+              Text(appLocalization(context).howAmIFeelingKeyLabel,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 18)),
               const SizedBox(height: 8),
@@ -103,8 +85,8 @@ class ScreenGymExercise extends StatelessWidget {
   }
 
   List<Widget> getListChildren() {
-    List<Widget> valor = List.generate(feelings.length, (index) {
-      Feeling currentFeeling = feelings[index];
+    List<Widget> valor = List.generate(MockFactory.someFeelingList().length, (index) {
+      Feeling currentFeeling = MockFactory.someFeelingList()[index];
       return ListTile(
         dense: true,
         contentPadding: EdgeInsets.zero,

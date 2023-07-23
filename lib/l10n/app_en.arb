@@ -32,6 +32,9 @@
   "highPronadePulldown": "High Pronade Pulldown",
   "@highPronadePulldown": {},
 
+  "holdTheBarAndPull": "Hold the bar and pull.",
+  "@holdTheBarAndPull": {},
+
   "trainingA": "Training A",
   "@rainingA": {},
 
@@ -44,7 +47,7 @@
   "howToDoKeyLabel": "How do I do?",
   "@howToDoKeyLabel": {},
 
-  "howAmIFeelingKeyLabel": "How to proceed?",
+  "howAmIFeelingKeyLabel": "How am I feeling?",
   "@howAmIFeelingKeyLabel": {},
 
   "formEmailKeyLabel": "E-mail",

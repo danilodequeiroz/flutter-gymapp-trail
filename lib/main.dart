@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gymapp/models/model_exercise.dart';
-import 'package:flutter_gymapp/ui/ui_screen_auth.dart';
 import 'package:flutter_gymapp/ui/ui_screen_gym_exercise.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:logging_to_logcat/logging_to_logcat.dart';
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
         Locale('en'),
         Locale('pt'),
       ],
-      home: ScreenAuth(),
+      home: ScreenGymExercise (),
     );
   }
 }
