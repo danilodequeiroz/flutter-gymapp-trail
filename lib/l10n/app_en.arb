@@ -41,9 +41,33 @@
   "deletePictureKeyLabel": "Remove photo...",
   "@deletePictureKeyLabel": {},
 
-  "howToDoKeyLabel": "How to proceed?",
+  "howToDoKeyLabel": "How do I do?",
   "@howToDoKeyLabel": {},
 
-  "howAmIFeelingKeyLabel": "How am I feeling?",
-  "@howAmIFeelingKeyLabel": {}
+  "howAmIFeelingKeyLabel": "How to proceed?",
+  "@howAmIFeelingKeyLabel": {},
+
+  "formEmailKeyLabel": "E-mail",
+  "@formEmailKeyLabel": {},
+
+  "formPasswordKeyLabel": "Password",
+  "@formPasswordKeyLabel": {},
+
+  "formConfirmPasswordKeyLabel": "Confirm password",
+  "@formConfirmPasswordKeyLabel": {},
+
+  "formNameKeyLabel": "Name",
+  "@formNameKeyLabel": {},
+
+  "formSignupKeyLabel": "Sign-up",
+  "@formSignupKeyLabel": {},
+
+  "formLoggInKeyLabel": "Login",
+  "@formLogginKeyLabel": {},
+
+  "formDontHaveAccountKeyLabel": "Don't you have an account, sign-up clicking here.",
+  "@formSingUpClickHereKeyLabel": {},
+
+  "formAlreadyHaveAccountKeyLabel": "Already have an account, click here to logg-in.",
+  "@formLoggInClickHereKeyLabel": {}
 }

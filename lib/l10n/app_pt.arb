@@ -45,5 +45,29 @@
   "@howToDoKeyLabel": {},
 
   "howAmIFeelingKeyLabel": "Como estou me sentindo?",
-  "@howAmIFeelingKeyLabel": {}
+  "@howAmIFeelingKeyLabel": {},
+
+  "formEmailKeyLabel": "E-mail",
+  "@formEmailKeyLabel": {},
+
+  "formPasswordKeyLabel": "Senha",
+  "@formPasswordKeyLabel": {},
+
+  "formConfirmPasswordKeyLabel": "Confirmar senha",
+  "@formConfirmPasswordKeyLabel": {},
+
+  "formNameKeyLabel": "Nome",
+  "@formNameKeyLabel": {},
+
+  "formSignupKeyLabel": "Cadastrar",
+  "@formSignupKeyLabel": {},
+
+  "formLoggInKeyLabel": "Login",
+  "@formLogginKeyLabel": {},
+
+  "formDontHaveAccountKeyLabel": "Se não tem conta, cadastre-se clicando aqui.",
+  "@formSingUpClickHereKeyLabel": {},
+
+  "formAlreadyHaveAccountKeyLabel": "Se já tem uma conta, logue-se clicando aqui.",
+  "@formLoggInClickHereKeyLabel": {}
 }

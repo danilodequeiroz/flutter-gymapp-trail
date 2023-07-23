@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_gymapp/_common/colors.dart';
+import '../localization/localization.dart';
 
 class ScreenAuth extends StatefulWidget {
   const ScreenAuth({super.key});
@@ -39,7 +39,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                           height: 128,
                         ),
                         Text(
-                          AppLocalizations.of(context).appTitle,
+                          appLocalization(context).appTitle,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 48,
@@ -50,11 +50,11 @@ class _ScreenAuthState extends State<ScreenAuth> {
                           height: 32,
                         ),
                         TextFormField(
-                          decoration: const InputDecoration(label: Text("E-mail")),
+                          decoration: InputDecoration(label: Text(appLocalization(context).formEmailKeyLabel)),
                         ),
                         TextFormField(
                           obscureText: true,
-                          decoration: const InputDecoration(label: Text("Senha")),
+                          decoration: InputDecoration(label: Text(appLocalization(context).formPasswordKeyLabel)),
                         ),
                         Visibility(
                             visible: !requireLoggin,
@@ -63,11 +63,11 @@ class _ScreenAuthState extends State<ScreenAuth> {
                                 TextFormField(
                                   obscureText: true,
                                   decoration:
-                                  const InputDecoration(label: Text("Confirmar senha")),
+                                  InputDecoration(label: Text(appLocalization(context).formConfirmPasswordKeyLabel)),
                                 ),
                                 TextFormField(
                                   decoration:
-                                  const InputDecoration(label: Text("Nome")),
+                                  InputDecoration(label: Text(appLocalization(context).formNameKeyLabel)),
                                 )
                               ],
                             )),
@@ -78,15 +78,17 @@ class _ScreenAuthState extends State<ScreenAuth> {
                             onPressed: () {
                               debugPrint("Clicked Loggin");
                             },
-                            child: Text((requireLoggin) ? "Logar" : "Cadastrar")),
+                            child: Text((requireLoggin)
+                                ? appLocalization(context).formLoggInKeyLabel
+                                : appLocalization(context).formSignupKeyLabel)),
                         const Divider(),
                         TextButton(
                             onPressed: () {
                               chooseBetweenLogginAndSignUpAndSetState();
                             },
                             child: Text((requireLoggin)
-                                ? "Ainda não tem conta, cadastre-se clicando aqui"
-                                : "Já tem conta, logue-se clicando aqui")),
+                                ? appLocalization(context).formDontHaveAccountKeyLabel
+                                : appLocalization(context).formAlreadyHaveAccountKeyLabel)),
                       ]),
                 ),
               ),
