@@ -24,6 +24,13 @@ class AuthTextFieldDecoration {
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(sixtyFour),
             borderSide: const BorderSide(
-                color: SelfColors.blue_0xff00ADFA, width: four)));
+                color: SelfColors.blue_0xff00ADFA, width: four)),
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(sixtyFour),
+            borderSide: const BorderSide(color: Colors.pink, width: two)),
+        focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(sixtyFour),
+            borderSide: const BorderSide(color: Colors.pink, width: four))
+    );
   }
 }

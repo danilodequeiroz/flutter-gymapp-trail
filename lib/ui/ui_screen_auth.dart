@@ -4,6 +4,7 @@ import 'package:flutter_gymapp/_common/colors.dart';
 import 'package:flutter_gymapp/decoration/auth_text_field_decoration.dart';
 import 'package:flutter_gymapp/localization/localization.dart';
 import 'package:flutter_gymapp/ui/ui_screen_gym_exercise.dart';
+import 'package:flutter_gymapp/validation/validator.dart';
 
 class ScreenAuth extends StatefulWidget {
   const ScreenAuth({super.key});
@@ -14,6 +15,7 @@ class ScreenAuth extends StatefulWidget {
 
 class _ScreenAuthState extends State<ScreenAuth> {
   bool requireLoggin = true;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Form(
+              key: _formKey,
               child: Center(
                 child: SingleChildScrollView(
                   child: Column(
@@ -56,6 +59,9 @@ class _ScreenAuthState extends State<ScreenAuth> {
                           decoration:
                               AuthTextFieldDecoration.getCustomInputDecoration(
                                   appLocalization(context).formEmailKeyLabel),
+                          validator: (value) =>
+                              AuthFormValidator(context: context)
+                                  .emailValidator(value),
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
@@ -64,6 +70,9 @@ class _ScreenAuthState extends State<ScreenAuth> {
                               AuthTextFieldDecoration.getCustomInputDecoration(
                                   appLocalization(context)
                                       .formPasswordKeyLabel),
+                          validator: (value) =>
+                              AuthFormValidator(context: context)
+                                  .passwordValidator(value),
                         ),
                         Visibility(
                             visible: !requireLoggin,
@@ -76,6 +85,9 @@ class _ScreenAuthState extends State<ScreenAuth> {
                                       .getCustomInputDecoration(
                                           appLocalization(context)
                                               .formConfirmPasswordKeyLabel),
+                                  validator: (value) =>
+                                      AuthFormValidator(context: context)
+                                          .passwordValidator(value),
                                 ),
                                 const SizedBox(height: 8),
                                 TextFormField(
@@ -83,6 +95,9 @@ class _ScreenAuthState extends State<ScreenAuth> {
                                       .getCustomInputDecoration(
                                           appLocalization(context)
                                               .formNameKeyLabel),
+                                  validator: (value) =>
+                                      AuthFormValidator(context: context)
+                                          .userNameValidator(value),
                                 )
                               ],
                             )),
@@ -91,7 +106,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                         ),
                         ElevatedButton(
                             onPressed: () {
-                              debugPrint("Clicked Loggin");
+                              mainButtonClicked();
                             },
                             child: Text((requireLoggin)
                                 ? appLocalization(context).formLoggInKeyLabel
@@ -118,6 +133,20 @@ class _ScreenAuthState extends State<ScreenAuth> {
             ),
           )
         ]));
+  }
+
+  void chooseBetweenLogginAndSignUpAndSetState() {
+    setState(() {
+      requireLoggin = !requireLoggin;
+    });
+  }
+
+  void mainButtonClicked() {
+    if (_formKey.currentState?.validate() ?? false) {
+      debugPrint("Form valido");
+    } else {
+      debugPrint("Form inválido");
+    }
   }
 
   void navigateAndPopupFromBottomToTop() {
@@ -151,11 +180,5 @@ class _ScreenAuthState extends State<ScreenAuth> {
     }
 
     Navigator.of(context).push(createRoute(const ScreenGymExercise()));
-  }
-
-  void chooseBetweenLogginAndSignUpAndSetState() {
-    setState(() {
-      requireLoggin = !requireLoggin;
-    });
   }
 }
