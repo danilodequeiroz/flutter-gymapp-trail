@@ -50,7 +50,7 @@
   "howAmIFeelingKeyLabel": "How am I feeling?",
   "@howAmIFeelingKeyLabel": {},
 
-  "formEmailKeyLabel": "E-mail",
+  "formEmailKeyLabel": "Email",
   "@formEmailKeyLabel": {},
 
   "formPasswordKeyLabel": "Password",
@@ -72,5 +72,35 @@
   "@formSingUpClickHereKeyLabel": {},
 
   "formAlreadyHaveAccountKeyLabel": "Already have an account, click here to logg-in.",
-  "@formLoggInClickHereKeyLabel": {}
+  "@formLoggInClickHereKeyLabel": {},
+
+  "emailCannotBeEmpty" : "The Email cannot be empty.",
+  "@emailCannotBeEmpty" : {},
+
+  "emailIsTooShort" : "The Email is too short",
+  "@emailIsTooShort" : {},
+
+  "emailIsInvalid" : "The email is invalid",
+  "@theEmailIsInvalid" : {},
+
+  "passwordIsShort" : "The password is too short (min. 9 characters).",
+  "@thePasswordIsShort" : {},
+
+  "passwordMustContainUppercaseCharacter" : "The Password must contain uppercase character(s).",
+  "@passwordMustContainUppercaseCharacter" : {},
+
+  "passwordMustContainLowercaseCharacter" : "The Password must contain lowercase character(s).",
+  "@passwordMustContainLowercaseCharacter" : {},
+
+  "passwordMustContainNumber" : "The Password must contain number(s)",
+  "@passwordMustContainNumber" : {},
+
+  "passwordMustContainSpecialCharacter" : "The Password must contains special character(s)",
+  "@passwordMustContainSpecialCharacter" : {},
+
+  "nameCannotBeEmpty" : "The name cannot be empty.",
+  "@nameCannotBeEmpty" : {},
+
+  "nameIsTooShort" : "The name is too short (min. 5 characters).",
+  "@theNameIsTooShort" : {}
 }

@@ -72,5 +72,35 @@
   "@formSingUpClickHereKeyLabel": {},
 
   "formAlreadyHaveAccountKeyLabel": "Se já tem uma conta, logue-se clicando aqui.",
-  "@formLoggInClickHereKeyLabel": {}
+  "@formLoggInClickHereKeyLabel": {},
+
+  "emailCannotBeEmpty" :  "O e-mail não pode ser vazio.",
+  "@emailCannotBeEmpty" : {},
+
+  "emailIsTooShort" :  "O e-mail é muito curto",
+  "@emailIsTooShort" : {},
+
+  "emailIsInvalid" :  "O e-mail não é valido",
+  "@theEmailIsInvalid" : {},
+
+  "passwordIsShort" :  "A senha é curta (min. 9 carácteres).",
+  "@thePasswordIsShort" : {},
+
+  "passwordMustContainUppercaseCharacter" :  "A senha deve conter carácter(es) maiúsculo(s).",
+  "@passwordMustContainUppercaseCharacter" : {},
+
+  "passwordMustContainLowercaseCharacter" :  "A senha deve conter carácter(es) minúsculo(s).",
+  "@passwordMustContainLowercaseCharacter" : {},
+
+  "passwordMustContainNumber" :  "A senha deve conter número(os)",
+  "@passwordMustContainNumber" : {},
+
+  "passwordMustContainSpecialCharacter" :  "A senha deve conter carácter(es) especial(ais)",
+  "@passwordMustContainSpecialCharacter" : {},
+
+  "nameCannotBeEmpty" :  "O nome não pode ser vazio.",
+  "@nameCannotBeEmpty" : {},
+
+  "nameIsTooShort" :  "O nome é muito curto (min. 5 carácteres).",
+  "@theNameIsTooShort" : {}
 }
