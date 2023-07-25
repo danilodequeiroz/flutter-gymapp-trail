@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gymapp/_common/colors.dart';
+import 'package:flutter_gymapp/decoration/auth_text_field_decoration.dart';
 import 'package:flutter_gymapp/localization/localization.dart';
 import 'package:flutter_gymapp/ui/ui_screen_gym_exercise.dart';
-
 
 class ScreenAuth extends StatefulWidget {
   const ScreenAuth({super.key});
@@ -53,24 +53,36 @@ class _ScreenAuthState extends State<ScreenAuth> {
                           height: 32,
                         ),
                         TextFormField(
-                          decoration: InputDecoration(label: Text(appLocalization(context).formEmailKeyLabel)),
+                          decoration:
+                              AuthTextFieldDecoration.getCustomInputDecoration(
+                                  appLocalization(context).formEmailKeyLabel),
                         ),
+                        const SizedBox(height: 8),
                         TextFormField(
                           obscureText: true,
-                          decoration: InputDecoration(label: Text(appLocalization(context).formPasswordKeyLabel)),
+                          decoration:
+                              AuthTextFieldDecoration.getCustomInputDecoration(
+                                  appLocalization(context)
+                                      .formPasswordKeyLabel),
                         ),
                         Visibility(
                             visible: !requireLoggin,
                             child: Column(
                               children: [
+                                const SizedBox(height: 8),
                                 TextFormField(
                                   obscureText: true,
-                                  decoration:
-                                  InputDecoration(label: Text(appLocalization(context).formConfirmPasswordKeyLabel)),
+                                  decoration: AuthTextFieldDecoration
+                                      .getCustomInputDecoration(
+                                          appLocalization(context)
+                                              .formConfirmPasswordKeyLabel),
                                 ),
+                                const SizedBox(height: 8),
                                 TextFormField(
-                                  decoration:
-                                  InputDecoration(label: Text(appLocalization(context).formNameKeyLabel)),
+                                  decoration: AuthTextFieldDecoration
+                                      .getCustomInputDecoration(
+                                          appLocalization(context)
+                                              .formNameKeyLabel),
                                 )
                               ],
                             )),
@@ -96,8 +108,10 @@ class _ScreenAuthState extends State<ScreenAuth> {
                               chooseBetweenLogginAndSignUpAndSetState();
                             },
                             child: Text((requireLoggin)
-                                ? appLocalization(context).formDontHaveAccountKeyLabel
-                                : appLocalization(context).formAlreadyHaveAccountKeyLabel)),
+                                ? appLocalization(context)
+                                    .formDontHaveAccountKeyLabel
+                                : appLocalization(context)
+                                    .formAlreadyHaveAccountKeyLabel)),
                       ]),
                 ),
               ),
@@ -113,6 +127,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
         builder: (BuildContext context) => const ScreenGymExercise(),
       );
     }
+
     Navigator.of(context, rootNavigator: true)
         .push(createRoute(const ScreenGymExercise()));
   }
@@ -134,8 +149,8 @@ class _ScreenAuthState extends State<ScreenAuth> {
         },
       );
     }
-    Navigator.of(context)
-        .push(createRoute(const ScreenGymExercise()));
+
+    Navigator.of(context).push(createRoute(const ScreenGymExercise()));
   }
 
   void chooseBetweenLogginAndSignUpAndSetState() {
