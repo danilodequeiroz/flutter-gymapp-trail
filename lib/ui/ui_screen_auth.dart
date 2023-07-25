@@ -4,7 +4,7 @@ import 'package:flutter_gymapp/_common/colors.dart';
 import 'package:flutter_gymapp/decoration/auth_text_field_decoration.dart';
 import 'package:flutter_gymapp/localization/localization.dart';
 import 'package:flutter_gymapp/ui/ui_screen_gym_exercise.dart';
-import 'package:flutter_gymapp/validation/validator.dart';
+import 'package:flutter_gymapp/validation/auth_form_validator.dart';
 
 class ScreenAuth extends StatefulWidget {
   const ScreenAuth({super.key});
