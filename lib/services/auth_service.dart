@@ -10,6 +10,6 @@ class AuthService {
   }) async {
     UserCredential userCredential = await _firebase
         .createUserWithEmailAndPassword(email: email, password: password);
-    userCredential.user?.updateDisplayName(name);
+    await userCredential.user?.updateDisplayName(name);
   }
 }
