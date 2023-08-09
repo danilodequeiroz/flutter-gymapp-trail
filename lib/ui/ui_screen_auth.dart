@@ -14,8 +14,22 @@ class ScreenAuth extends StatefulWidget {
 }
 
 class _ScreenAuthState extends State<ScreenAuth> {
-  bool requireLoggin = true;
+  bool requireLogin = true;
   final _formKey = GlobalKey<FormState>();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _password2Controller = TextEditingController();
+  TextEditingController _nameController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController.text = "foo@bar.nl";
+    _nameController.text = "Daniel Fraga";
+    _passwordController.text = "34en8*ggHV!R8qw&\$#V";
+    _password2Controller.text = "34en8*ggHV!R8qw&\$#V";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +70,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                           height: 32,
                         ),
                         TextFormField(
+                          controller: _emailController,
                           decoration:
                               AuthTextFieldDecoration.getCustomInputDecoration(
                                   appLocalization(context).formEmailKeyLabel),
@@ -65,6 +80,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
+                          controller: _passwordController,
                           obscureText: true,
                           decoration:
                               AuthTextFieldDecoration.getCustomInputDecoration(
@@ -75,11 +91,12 @@ class _ScreenAuthState extends State<ScreenAuth> {
                                   .passwordValidator(value),
                         ),
                         Visibility(
-                            visible: !requireLoggin,
+                            visible: !requireLogin,
                             child: Column(
                               children: [
                                 const SizedBox(height: 8),
                                 TextFormField(
+                                  controller: _password2Controller,
                                   obscureText: true,
                                   decoration: AuthTextFieldDecoration
                                       .getCustomInputDecoration(
@@ -91,6 +108,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                                 ),
                                 const SizedBox(height: 8),
                                 TextFormField(
+                                  controller: _nameController,
                                   decoration: AuthTextFieldDecoration
                                       .getCustomInputDecoration(
                                           appLocalization(context)
@@ -108,7 +126,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                             onPressed: () {
                               mainButtonClicked();
                             },
-                            child: Text((requireLoggin)
+                            child: Text((requireLogin)
                                 ? appLocalization(context).formLoggInKeyLabel
                                 : appLocalization(context).formSignupKeyLabel)),
                         ElevatedButton(
@@ -122,7 +140,7 @@ class _ScreenAuthState extends State<ScreenAuth> {
                             onPressed: () {
                               chooseBetweenLogginAndSignUpAndSetState();
                             },
-                            child: Text((requireLoggin)
+                            child: Text((requireLogin)
                                 ? appLocalization(context)
                                     .formDontHaveAccountKeyLabel
                                 : appLocalization(context)
@@ -137,16 +155,37 @@ class _ScreenAuthState extends State<ScreenAuth> {
 
   void chooseBetweenLogginAndSignUpAndSetState() {
     setState(() {
-      requireLoggin = !requireLoggin;
+      requireLogin = !requireLogin;
     });
   }
 
   void mainButtonClicked() {
     if (_formKey.currentState?.validate() ?? false) {
       debugPrint("Form valido");
+      validatedFormClick();
     } else {
       debugPrint("Form inválido");
     }
+  }
+
+  void validatedFormClick(){
+    if(requireLogin){
+      loginClicked();
+    }else{
+      signupClicked();
+    }
+  }
+
+  void loginClicked(){
+    debugLogFormInputs();
+  }
+
+  void signupClicked(){
+    debugLogFormInputs();
+  }
+
+  void debugLogFormInputs(){
+    debugPrint("${_emailController.text}  ${_passwordController.text} ${_password2Controller.text}  ${_nameController.text}");
   }
 
   void navigateAndPopupFromBottomToTop() {
