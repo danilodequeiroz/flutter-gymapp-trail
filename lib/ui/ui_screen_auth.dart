@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gymapp/_common/colors.dart';
 import 'package:flutter_gymapp/decoration/auth_text_field_decoration.dart';
 import 'package:flutter_gymapp/localization/localization.dart';
+import 'package:flutter_gymapp/services/auth_service.dart';
 import 'package:flutter_gymapp/ui/ui_screen_gym_exercise.dart';
 import 'package:flutter_gymapp/validation/auth_form_validator.dart';
+import 'package:flutter_gymapp/_common/password_generator.dart';
 
 class ScreenAuth extends StatefulWidget {
   const ScreenAuth({super.key});
@@ -14,21 +16,24 @@ class ScreenAuth extends StatefulWidget {
 }
 
 class _ScreenAuthState extends State<ScreenAuth> {
-  bool requireLogin = true;
+  bool requireLogin = false;
   final _formKey = GlobalKey<FormState>();
 
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _password2Controller = TextEditingController();
-  TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _password2Controller = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final AuthService _authService = AuthService();
 
   @override
   void initState() {
     super.initState();
-    _emailController.text = "foo@bar.nl";
+    _emailController.text = "fragadaniel@yopmail.com";
     _nameController.text = "Daniel Fraga";
-    _passwordController.text = "34en8*ggHV!R8qw&\$#V";
-    _password2Controller.text = "34en8*ggHV!R8qw&\$#V";
+    String password = generatePassword(15);
+    debugPrint("generated password $password");
+    _passwordController.text = password;
+    _password2Controller.text = password;
   }
 
   @override
@@ -168,24 +173,28 @@ class _ScreenAuthState extends State<ScreenAuth> {
     }
   }
 
-  void validatedFormClick(){
-    if(requireLogin){
+  void validatedFormClick() {
+    if (requireLogin) {
       loginClicked();
-    }else{
+    } else {
       signupClicked();
     }
   }
 
-  void loginClicked(){
+  void loginClicked() {
     debugLogFormInputs();
   }
 
-  void signupClicked(){
-    debugLogFormInputs();
+  void signupClicked() {
+    _authService.postNewUser(
+        email: _emailController.text,
+        password: _passwordController.text,
+        name: _nameController.text);
   }
 
-  void debugLogFormInputs(){
-    debugPrint("${_emailController.text}  ${_passwordController.text} ${_password2Controller.text}  ${_nameController.text}");
+  void debugLogFormInputs() {
+    debugPrint(
+        "${_emailController.text}  ${_passwordController.text} ${_password2Controller.text}  ${_nameController.text}");
   }
 
   void navigateAndPopupFromBottomToTop() {
