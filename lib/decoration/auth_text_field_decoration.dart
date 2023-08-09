@@ -8,6 +8,9 @@ const double sixteen = 16;
 const double sixtyFour = 64;
 
 class AuthTextFieldDecoration {
+
+  static bool hideText = true;
+
   static InputDecoration getCustomInputDecoration(String label) {
     return InputDecoration(
         hintText: label,
@@ -16,7 +19,7 @@ class AuthTextFieldDecoration {
         contentPadding: const EdgeInsets.only(
             left: sixteen, right: sixteen, top: eight, bottom: eight),
         border:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(sixtyFour)),
+        OutlineInputBorder(borderRadius: BorderRadius.circular(sixtyFour)),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(sixtyFour),
           borderSide: const BorderSide(color: Colors.black, width: two),
@@ -32,5 +35,44 @@ class AuthTextFieldDecoration {
             borderRadius: BorderRadius.circular(sixtyFour),
             borderSide: const BorderSide(color: Colors.pink, width: four))
     );
+  }
+
+  static InputDecoration getCustomInputDecorationPassword({ required String label,
+      required Function() onHidePasswordPressed} ) {
+    {
+      return InputDecoration(
+          suffixIcon: IconButton(
+            icon: Icon(
+              // Based on passwordVisible state choose the icon
+              hideText
+                  ? Icons.visibility_off
+                  : Icons.visibility,
+              color: SelfColors.blue_0xff0A6D92,
+            ),
+            onPressed: onHidePasswordPressed,
+          ),
+          hintText: label,
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: const EdgeInsets.only(
+              left: sixteen, right: sixteen, top: eight, bottom: eight),
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(sixtyFour)),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(sixtyFour),
+            borderSide: const BorderSide(color: Colors.black, width: two),
+          ),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(sixtyFour),
+              borderSide: const BorderSide(
+                  color: SelfColors.blue_0xff00ADFA, width: four)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(sixtyFour),
+              borderSide: const BorderSide(color: Colors.pink, width: two)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(sixtyFour),
+              borderSide: const BorderSide(color: Colors.pink, width: four))
+      );
+    }
   }
 }

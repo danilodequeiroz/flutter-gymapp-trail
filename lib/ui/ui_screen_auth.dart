@@ -86,11 +86,17 @@ class _ScreenAuthState extends State<ScreenAuth> {
                         const SizedBox(height: 8),
                         TextFormField(
                           controller: _passwordController,
-                          obscureText: true,
-                          decoration:
-                              AuthTextFieldDecoration.getCustomInputDecoration(
-                                  appLocalization(context)
-                                      .formPasswordKeyLabel),
+                          obscureText: AuthTextFieldDecoration.hideText,
+                          decoration: AuthTextFieldDecoration
+                              .getCustomInputDecorationPassword(
+                                  label: appLocalization(context)
+                                      .formConfirmPasswordKeyLabel,
+                                  onHidePasswordPressed: () {
+                                    setState(() {
+                                      AuthTextFieldDecoration.hideText =
+                                          !AuthTextFieldDecoration.hideText;
+                                    });
+                                  }),
                           validator: (value) =>
                               AuthFormValidator(context: context)
                                   .passwordValidator(value),
@@ -102,11 +108,18 @@ class _ScreenAuthState extends State<ScreenAuth> {
                                 const SizedBox(height: 8),
                                 TextFormField(
                                   controller: _password2Controller,
-                                  obscureText: true,
+                                  obscureText: AuthTextFieldDecoration.hideText,
                                   decoration: AuthTextFieldDecoration
-                                      .getCustomInputDecoration(
-                                          appLocalization(context)
-                                              .formConfirmPasswordKeyLabel),
+                                      .getCustomInputDecorationPassword(
+                                          label: appLocalization(context)
+                                              .formConfirmPasswordKeyLabel,
+                                          onHidePasswordPressed: () {
+                                            setState(() {
+                                              AuthTextFieldDecoration.hideText =
+                                                  !AuthTextFieldDecoration
+                                                      .hideText;
+                                            });
+                                          }),
                                   validator: (value) =>
                                       AuthFormValidator(context: context)
                                           .passwordValidator(value),
